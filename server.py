@@ -48,15 +48,9 @@ def getpredict(coors: str):
 
 @app.post('/api/predict')
 async def predict_image(item: dict):
-    print(item)
-    print(type(item))
-    return item
-
-# @app.post('/api/predict')
-# async def predict_image(item: dict):
-#     data = item["data"]
-#     predictions = predict(data["coors"])
-#     return predictions
+    data = item["data"]
+    predictions = predict(data["coors"])
+    return predictions
 
 
 @app.post('/api/predictHtml')
