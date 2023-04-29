@@ -42,8 +42,20 @@ def hello_world(name: str):
 
 @app.post('/api/predict')
 async def predict_image(item: dict):
-    data = item["data"]
-    predictions = predict(data["coors"])
+    print(item)
+    print(type(item))
+    return item
+
+# @app.post('/api/predict')
+# async def predict_image(item: dict):
+#     data = item["data"]
+#     predictions = predict(data["coors"])
+#     return predictions
+
+
+@app.post('/api/predictHtml')
+async def predict_image(item: dict):
+    predictions = predict(item["coors"])
     return predictions
 
 if __name__ == "__main__":
