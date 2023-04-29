@@ -40,6 +40,12 @@ def hello_world(name: str):
     # return {"data": f'Hello {name}'}
 
 
+@app.get('/getpredict')
+def getpredict(coors: str):
+    predictions = predict(coors)
+    return predictions
+
+
 @app.post('/api/predict')
 async def predict_image(item: dict):
     print(item)
